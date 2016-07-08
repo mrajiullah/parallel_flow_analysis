@@ -1,0 +1,1 @@
+ cat src_dirB.20081218-125904.UTC|xargs -n 1 -P 4 -I{} bash run.sh  {}
