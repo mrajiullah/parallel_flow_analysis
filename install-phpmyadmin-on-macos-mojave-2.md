@@ -2,7 +2,7 @@ With Apples' new macOS Mojave 10.14 available for download, here is how
 to get the **AMP** stack up and running on the new macOS. This
 tutorial** **will go through the process of getting **Apache, MySQL,
 PHP** (or otherwise known as the 'AMP'
-stack)** **and** phpMyAdmin** running on the new mac OS Mojave.
+stack)** and **phpMyAdmin** running on the new mac OS Mojave.
 
 This tutorial sets up the AMP stack in more of a traditional way using
 the loaded Apache and PHP and downloading MySQL and phpMyAdmin.
@@ -55,10 +55,6 @@ httpd -v
 The Apache version that comes in macOS Mojave is **Apache/2.4.34     
   **
 
-![it-works-webroot](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-it-works-webroot.png){.aligncenter
-.wp-image-10836 .size-full width="1424" height="620"
-sizes="(max-width: 1424px) 100vw, 1424px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-it-works-webroot.png 1424w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-it-works-webroot-300x131.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-it-works-webroot-768x334.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-it-works-webroot-1024x446.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-it-works-webroot-90x39.png 90w"}
 
 After starting **Apache** -- test to see if the webserver is working in
 the browser -- http://localhost -- you should see the "It Works!" text.
@@ -72,7 +68,7 @@ apachectl configtest
 
 This will give you an indication of what might be wrong.
 
-[Document Root](#ssu){.scroll} {#webroot .mainhead}
+[Document Root]
 ------------------------------
 
 Document root is the location where the files are shared from the file
@@ -113,12 +109,6 @@ described next.
 You have to make a few additional tweaks to get the **\~/Sites** folder
 back up and running.
 
-![user sites
-folder](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-sites-user-folder.png){.aligncenter
-.wp-image-10837 .size-full width="1536" height="874"
-sizes="(max-width: 1536px) 100vw, 1536px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-sites-user-folder.png 1536w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-sites-user-folder-300x171.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-sites-user-folder-768x437.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-sites-user-folder-1024x583.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-sites-user-folder-90x51.png 90w"}
-
 Add  a "username.conf" filed under:
 
 ``` {.crayon:false}
@@ -130,15 +120,6 @@ the short username of the account with the suffix **.conf**, its
 location and permissions/ownership is best tackled by using the
 **Terminal**, the text editor '**nano**' would be the best tool to deal
 with this.
-
-If you would rather edit config files in a text editor as an app I would
-suggest the free [BBEdit](https://www.barebones.com/products/bbedit/)
-which allows you to open hidden system files.
-
-![bbedit-macos-sierra-editing](//coolestguidesontheplanet.com/wp-content/uploads/2017/09/bbedit-macos-sierra-editing.jpg){.aligncenter
-.size-full .wp-image-10756 width="300" height="298"
-sizes="(max-width: 300px) 100vw, 300px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2017/09/bbedit-macos-sierra-editing.jpg 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2017/09/bbedit-macos-sierra-editing-150x150.jpg 150w, https://coolestguidesontheplanet.com/wp-content/uploads/2017/09/bbedit-macos-sierra-editing-90x90.jpg 90w, https://coolestguidesontheplanet.com/wp-content/uploads/2017/09/bbedit-macos-sierra-editing-200x200.jpg 200w, https://coolestguidesontheplanet.com/wp-content/uploads/2017/09/bbedit-macos-sierra-editing-20x20.jpg 20w"}
 
 Launch **Terminal**, (Applications/Utilities), and follow the commands
 below, first one gets you to the right spot, 2nd one opens the text
@@ -253,12 +234,8 @@ Then this user level document root will be viewable at:
 You should only see a directory tree like structure if the folder is
 empty.
 
-![user-web-root](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-user-web-root.png){.aligncenter
-.wp-image-10838 .size-full width="1198" height="648"
-sizes="(max-width: 1198px) 100vw, 1198px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-user-web-root.png 1198w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-user-web-root-300x162.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-user-web-root-768x415.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-user-web-root-1024x554.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-user-web-root-90x49.png 90w"}
 
-[Override .htaccess and allow URL Rewrites](#ssu){.scroll} {#htaccess .mainhead}
+[Override .htaccess and allow URL Rewrites]
 ----------------------------------------------------------
 
 If you are going to use the web serving *document root* at
@@ -275,11 +252,6 @@ sudo nano /etc/apache2/httpd.conf
 
  
 
-::: {#attachment_9177 .wp-caption .aligncenter style="width: 600px"}
-![osx-htaccess-override](//coolestguidesontheplanet.com/wp-content/uploads/2014/07/osx-htaccess-override.png){.size-full
-.wp-image-9177 width="590" height="239"
-sizes="(max-width: 590px) 100vw, 590px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2014/07/osx-htaccess-override.png 590w, https://coolestguidesontheplanet.com/wp-content/uploads/2014/07/osx-htaccess-override-300x122.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2014/07/osx-htaccess-override-90x36.png 90w, https://coolestguidesontheplanet.com/wp-content/uploads/2014/07/osx-htaccess-override-20x8.png 20w"}
 
 osx-htaccess-override
 :::
@@ -328,13 +300,7 @@ your document root with the contents below, then view it in a browser.
  <?php phpinfo(); ?>
 ```
 
-![php
-7](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php.png){.aligncenter
-.wp-image-10839 .size-full width="1612" height="1616"
-sizes="(max-width: 1612px) 100vw, 1612px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php.png 1612w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php-150x150.png 150w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php-300x300.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php-768x770.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php-1021x1024.png 1021w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php-90x90.png 90w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-php-200x200.png 200w"}
-
-[MySQL](#ssu){.scroll} {#mysql .mainhead}
+[MySQL]
 ----------------------
 
 MySQL doesn't come pre-loaded with macOS Mojave and needs to
@@ -373,23 +339,9 @@ software like phpMyAdmin can't connect with the newer encryptions -- so
 if you are going to use a GUI wrapper like phpMyadmin I suggest you
 stick to **legacy**.
 
-![mojave mysql 8 legacy
-password](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-legacy-password.png){.aligncenter
-.wp-image-10844 .size-full width="1228" height="872"
-sizes="(max-width: 1228px) 100vw, 1228px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-legacy-password.png 1228w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-legacy-password-300x213.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-legacy-password-768x545.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-legacy-password-1024x727.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-legacy-password-90x64.png 90w"}
-
- 
 
 Then add a password for the MySQL root user.
 
-![mysql root
-password](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-root-password.png){.aligncenter
-.size-full .wp-image-10841 width="1232" height="878"
-sizes="(max-width: 1232px) 100vw, 1232px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-root-password.png 1232w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-root-password-300x214.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-root-password-768x547.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-root-password-1024x730.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-root-password-90x64.png 90w"}
-
- 
 
 ### Add Mysql to your path
 
@@ -465,12 +417,6 @@ Starting MySQL
 You can then start the MySQL server from the **System Preferences** or
 via the **command line.**
 
-![mojave mysql system
-preference](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-sys-pref.png){.aligncenter
-.wp-image-10842 .size-full width="1324" height="1090"
-sizes="(max-width: 1324px) 100vw, 1324px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-sys-pref.png 1324w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-sys-pref-300x247.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-sys-pref-768x632.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-sys-pref-1024x843.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-mysql-sys-pref-90x74.png 90w"}
-
 The new MySQL system preference also has the uninstall feature -- useful
 if you've installed it with a security encryption that's not working for
 you and want to try the other one. You can also see the paths to the
@@ -516,7 +462,7 @@ sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
 
 ###  {#section-5}
 
-[phpMyAdmin](#ssu){.scroll} {#phpmyadmin .mainhead}
+[phpMyAdmin]
 ---------------------------
 
 First fix the *2002 socket error* if you haven't done so from the MySQL
@@ -529,11 +475,6 @@ sudo mkdir /var/mysql
 ``` {.crayon:false}
 sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
 ```
-
-![phpmyadmin-install](//coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-phpmyadmin-install.png){.aligncenter
-.wp-image-10843 .size-full width="1986" height="906"
-sizes="(max-width: 1986px) 100vw, 1986px"
-srcset="https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-phpmyadmin-install.png 1986w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-phpmyadmin-install-300x137.png 300w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-phpmyadmin-install-768x350.png 768w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-phpmyadmin-install-1024x467.png 1024w, https://coolestguidesontheplanet.com/wp-content/uploads/2018/09/mojave-phpmyadmin-install-90x41.png 90w"}
 
 Download [phpMyAdmin](http://www.phpmyadmin.net/home_page/downloads.php "phpmyadmin download"),
 the zip English package will suit a lot of users, then unzip it and move
@@ -582,7 +523,7 @@ to interact with your MySQL databases.]{style="line-height: 1.538em;"}
 
  
 
-[Permissions](#ssu){.scroll} {#permissions .mainhead}
+[Permissions]
 ----------------------------
 
 To run a website with no permission issues it is best to set the web
