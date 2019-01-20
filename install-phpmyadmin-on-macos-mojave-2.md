@@ -8,8 +8,7 @@ This tutorial sets up the AMP stack in more of a traditional way using
 the loaded Apache and PHP and downloading MySQL and phpMyAdmin.
 
 
-[Apache/WebSharing]
-----------------------------------
+#Apache/WebSharing
 
 Web serving is built into Mojave with **Apache** app, it is installed
 ready to be fired up.
@@ -52,8 +51,7 @@ To find the Apache version
 httpd -v
 ```
 
-The Apache version that comes in macOS Mojave is **Apache/2.4.34     
-  **
+The Apache version that comes in macOS Mojave is **Apache/2.4.34**
 
 
 After starting **Apache** -- test to see if the webserver is working in
@@ -68,8 +66,7 @@ apachectl configtest
 
 This will give you an indication of what might be wrong.
 
-[Document Root]
-------------------------------
+##Document Root
 
 Document root is the location where the files are shared from the file
 system and is similar to the traditional names of '**public\_html**' and
@@ -235,8 +232,7 @@ You should only see a directory tree like structure if the folder is
 empty.
 
 
-[Override .htaccess and allow URL Rewrites]
-----------------------------------------------------------
+##Override .htaccess and allow URL Rewrites
 
 If you are going to use the web serving *document root* at
 /Library/WebServer/Documents it is a good idea to allow any
@@ -267,8 +263,7 @@ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 
  
 
-[PHP](#ssu){.scroll} {#php .mainhead}
---------------------
+#PHP
 
 **PHP 7.1.9**  is loaded in this version of macOS Mojave and needs to be
 turned on by uncommenting a line in the **httpd.conf** file.
@@ -300,8 +295,7 @@ your document root with the contents below, then view it in a browser.
  <?php phpinfo(); ?>
 ```
 
-[MySQL]
-----------------------
+#MySQL
 
 MySQL doesn't come pre-loaded with macOS Mojave and needs to
 be [dowloaded from the MySQL
@@ -312,19 +306,6 @@ of macOS.
 
 Use the **macOS 10.13 (x86, 64-bit), DMG Archive **version (works on
 macOS Mojave).
-
-If you are upgrading from a previous macOS and have an older MySQL
-version you do not have to update it.
-
-Also if you have a clean install and want the earlier MySQL version 5.7,
-you can still get this from the MySQL site -- from the 'Looking for
-previous GA versions' link. (MySQL 8 is relatively new and not in many
-production set ups)
-
-One thing with MySQL upgrades, always take a [data dump of your
-database](https://coolestguidesontheplanet.com/import-export-mysql-database-command-line/ "Import / Export a mysql database on the command line")
-in case things go south and before you upgrade to macOS Mojave make sure
-your MySQL Server is **not** running.
 
 When downloading you don't have to sign up, look for **[» No thanks,
 just take me to the downloads!]{style="background-color: #ffff00;"}** 
@@ -371,7 +352,6 @@ the shell for the above to work straight away.
 source ~/.bash_profile
 ```
 
-### 
 
 ### Change the MySQL root password
 
@@ -411,8 +391,7 @@ Start MySQL
 
     sudo /usr/local/mysql/support-files/mysql.server start
 
-Starting MySQL
---------------
+###Starting MySQL
 
 You can then start the MySQL server from the **System Preferences** or
 via the **command line.**
@@ -441,9 +420,7 @@ This also puts you into a *shell* interactive dialogue with MySQL, type
 
  
 
-###  {#password}
-
-###  {#section-4}
+###  password
 
 ### Fix the 2002 MySQL Socket error {#password}
 
@@ -460,10 +437,8 @@ sudo mkdir /var/mysql
 sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
 ```
 
-###  {#section-5}
 
-[phpMyAdmin]
----------------------------
+#phpMyAdmin
 
 First fix the *2002 socket error* if you haven't done so from the MySQL
 section-
@@ -523,8 +498,7 @@ to interact with your MySQL databases.]{style="line-height: 1.538em;"}
 
  
 
-[Permissions]
-----------------------------
+##Permissions
 
 To run a website with no permission issues it is best to set the web
 root and its contents to be writeable by all since it's a local
@@ -564,3 +538,4 @@ account](https://coolestguidesontheplanet.com/install-apache-mysql-php-on-macos-
 That's it! You now have the native AMP stack running on top of macOS
 Mojave.
 
+:star: :star: :star:
