@@ -91,7 +91,7 @@ The files are shared in the filing system at --
 /Library/WebServer/Documents/
 ```
 
-### User Level Root {#userlevel .mainhead}
+### User Level Root 
 
 The other web root directory which is missing by default is the
 '**\~/Sites'** folder in the User account. This takes a bit longer to
@@ -245,11 +245,7 @@ previous step.
 ``` {.crayon:false}
 sudo nano /etc/apache2/httpd.conf
 ```
-
- 
-
-
-osx-htaccess-override
+ osx-htaccess-override
 :::
 
 Also while here allow URL **rewrites** so your permalinks look clean,
@@ -472,15 +468,10 @@ Run the set up in the browser
 
 **http://localhost/\~username/phpmyadmin/setup/ **or** http://localhost/phpmyadmin/setup/**
 
-**![](/wp-content/uploads/2013/08/phpmyadmin-set-new-server.png)**
-
-You need to create a
-new [localhost ]{style="line-height: 1.538em;"}[mysql server connection,
+You need to create a new [localhost ]{style="line-height: 1.538em;"}[mysql server connection,
 click **new server**.]{style="line-height: 1.538em;"}
 
- 
 
-![](/wp-content/uploads/2013/08/phpmyadmin-set-new-server-mysql-password.png)\
 Switch to the **Authentication** tab and set the local MySQL root user
 and the password.\
 Add in the username "root" (maybe already populated, add in the password
@@ -489,14 +480,8 @@ click on save and you are returned to the previous screen.\
 (This is not the macOS Admin or root password -- it is the MySQL root
 user)
 
- 
-
 [Now going to http://localhost/\~username/phpmyadmin/ will now allow you
 to interact with your MySQL databases.]{style="line-height: 1.538em;"}
-
-![](/wp-content/uploads/2013/08/phpmyadmin-4-no-frames.png)
-
- 
 
 ##Permissions
 
@@ -535,6 +520,16 @@ Another more straightforward way to do this if you have a one user
 workstation is to change the [Apache web user from \_www to your
 account](https://coolestguidesontheplanet.com/install-apache-mysql-php-on-macos-mojave-10-14/#permissions).
 
+One ore thing, log in to MySQL console with root user:
+``` {.crayon:false}
+root@9532f0da1a2a:/# mysql -u root -pPASSWORD
+```
+and change the Authentication Plugin with the password there:
+``` {.crayon:false}
+mysql> ALTER USER root IDENTIFIED WITH mysql_native_password BY 'PASSWORD';
+Query OK, 0 rows affected (0.08 sec)
+
+```
 That's it! You now have the native AMP stack running on top of macOS
 Mojave.
 
